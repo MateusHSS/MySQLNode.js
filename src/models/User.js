@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcryptjs');
 
 class User extends Model {
     //Metodo estatico que inicializa a tabela, deve ser passado a instancia de conexao com 
@@ -8,8 +9,15 @@ class User extends Model {
         super.init({
             name: DataTypes.STRING,
             email: DataTypes.STRING,
+            password: DataTypes.STRING,
         },{
-            sequelize: connection
+            sequelize: connection,
+            hooks: {
+                beforeSave: async (user, options) => {
+                    const hash = await bcrypt.hash(user.password, 10);
+                    user.password = hash;
+                }
+            }
         })
     }
 

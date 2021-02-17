@@ -21,6 +21,12 @@
     consign npm
     require-directory npm
 
+## INSTALANDO O MODULO DE TOKEN DE AUTENTICACAO
+    yarn add jsonwebtoken
+
+## INSTALANDO MODULO DE ENCRIPTACAO DE SENHA
+    yarn sequelize add bcryptjs
+
 "src/routes.js" : Arquivo com todas as rotas do app;
 "src/server.js" : Arquivo que inicializa o servidor na porta 8080;
     
