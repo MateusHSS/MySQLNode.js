@@ -2,9 +2,9 @@ const Sequelize = require('sequelize');
 const dbConfig = require('../config/database');
 
 //importa o model do usuario que foi criado
-const User = require('../models/User');
-const Address = require('../models/Address');
-const Tech = require('../models/Tech');
+const User = require('../app/models/User');
+const Address = require('../app/models/Address');
+const Tech = require('../app/models/Tech');
 
 const connection = new Sequelize(dbConfig);
 

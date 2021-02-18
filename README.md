@@ -27,6 +27,15 @@
 ## INSTALANDO MODULO DE ENCRIPTACAO DE SENHA
     yarn sequelize add bcryptjs
 
+## INSTALANDO MODULO DE ENVIO DE EMAIL
+    yarn add nodemailer
+
+## INSTALANDO MODULO DE TEMPLATE DE EMAILS COM HTML
+    yarn add nodemailer-express-handlebars
+
+## INSTALANDO MODULO DE ARCHIVE DIRECTORY
+    yarn add path
+
 "src/routes.js" : Arquivo com todas as rotas do app;
 "src/server.js" : Arquivo que inicializa o servidor na porta 8080;
     

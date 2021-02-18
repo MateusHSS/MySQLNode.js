@@ -1,16 +1,18 @@
 const express = require('express');
-const UserController = require('./controllers/UserController');
-const AddressController = require('./controllers/AddressController');
-const TechController = require('./controllers/TechController');
-const ReportController = require('./controllers/ReportController');
-const AuthController = require('./controllers/AuthController');
+const UserController = require('./app/controllers/UserController');
+const AddressController = require('./app/controllers/AddressController');
+const TechController = require('./app/controllers/TechController');
+const ReportController = require('./app/controllers/ReportController');
+const AuthController = require('./app/controllers/AuthController');
 
-const authMiddleware = require('./middlewares/auth');
+const authMiddleware = require('./app/middlewares/auth');
 
 const routes = express.Router();
 
 routes.post('/register', AuthController.register);
 routes.post('/authenticate', AuthController.authenticate);
+routes.post('/forgot_password', AuthController.forgot_password);
+routes.post('/reset_password', AuthController.reset_password);
 
 routes.post('/users', authMiddleware, UserController.store);
 routes.get('/users', authMiddleware, UserController.index);
